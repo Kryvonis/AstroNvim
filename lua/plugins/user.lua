@@ -86,4 +86,10 @@ return {
       { "<leader>T", "<cmd>TodoTelescope<cr>", desc = "Open TODOs in Telescope" },
     },
   },
+  {
+    "mbbill/undotree",
+    keys = {
+      { "<leader>r", "<cmd>UndotreeToggle<cr>", desc = "Open UndoTreee" },
+    },
+  },
 }
