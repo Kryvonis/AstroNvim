@@ -92,4 +92,10 @@ return {
       { "<leader>r", "<cmd>UndotreeToggle<cr>", desc = "Open UndoTreee" },
     },
   },
+  { "folke/neodev.nvim", opts = {} },
+  {
+    "ggandor/leap.nvim",
+    config = function() require("leap").add_default_mappings() end,
+    lazy = false,
+  },
 }
