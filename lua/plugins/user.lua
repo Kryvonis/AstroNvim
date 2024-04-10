@@ -98,4 +98,13 @@ return {
     config = function() require("leap").add_default_mappings() end,
     lazy = false,
   },
+  {
+    "stevearc/oil.nvim",
+    opts = {},
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    keys = {
+      { "-", "<cmd>Oil<cr>", desc = "Open parent directory" },
+    },
+  },
 }
