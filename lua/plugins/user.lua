@@ -107,4 +107,57 @@ return {
       { "-", "<cmd>Oil<cr>", desc = "Open parent directory" },
     },
   },
+  {
+    "vhyrro/luarocks.nvim",
+    priority = 1000,
+    config = true,
+    opts = {
+      rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" },
+    },
+  },
+  {
+    "rest-nvim/rest.nvim",
+    ft = "http",
+    dependencies = { "luarocks.nvim" },
+    keys = {
+      {
+        "<localleader>rr",
+        "<cmd>Rest run<cr>",
+        "Run request under the cursor",
+      },
+      {
+        "<localleader>rl",
+        "<cmd>Rest run last<cr>",
+        "Re-run latest request",
+      },
+      {
+        "<localleader>re",
+        "<cmd>Telescope rest select_env<cr>",
+        "Select Env File",
+      },
+    },
+    config = function()
+      require("rest-nvim").setup()
+      require("telescope").load_extension "rest"
+    end,
+  },
+  -- {
+  --   "huggingface/llm.nvim",
+  --   opts = {
+  --
+  --     model = "codellama",
+  --     backend = "ollama",
+  --     debounce_ms = 300,
+  --     url = "http://10.0.0.56:11434/api/generate",
+  --     -- cf https://github.com/ollama/ollama/blob/main/docs/api.md#parameters
+  --     request_body = {
+  --       -- Modelfile options for the model you use
+  --       options = {
+  --         temperature = 0.2,
+  --         top_p = 0.95,
+  --       },
+  --     },
+  --   },
+  -- },
+  --
 }
