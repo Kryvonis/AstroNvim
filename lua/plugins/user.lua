@@ -188,4 +188,10 @@ return {
       require("image_preview").setup()
     end,
   },
+  {
+    "j-hui/fidget.nvim",
+    opts = {
+      -- options
+    },
+  },
 }
